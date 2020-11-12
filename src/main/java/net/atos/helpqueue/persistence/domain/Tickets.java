@@ -18,6 +18,15 @@ public class Tickets {
 	public Tickets() {
 		super();
 	}
+	
+	public Tickets(Long id, String question, String user, String subject, String tutor) {
+		super();
+		this.id = id;
+		this.question = question;
+		this.user = user;
+		this.subject = subject;
+		this.tutor = tutor;
+	}
 
 	public Long getId() {
 		return id;
