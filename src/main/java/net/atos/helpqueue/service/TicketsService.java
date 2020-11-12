@@ -2,9 +2,12 @@ package net.atos.helpqueue.service;
 
 import java.util.List;
 
+import org.springframework.stereotype.Service;
+
 import net.atos.helpqueue.persistence.domain.Tickets;
 import net.atos.helpqueue.persistence.repo.TicketsRepo;
 
+@Service
 public class TicketsService {
 
 	// CRUD - Create Read Update Delete
@@ -15,7 +18,7 @@ public class TicketsService {
 			this.repo = repo;
 		}
 		
-		public Tickets createTicket(Tickets ticket) {
+		public Tickets createTickets(Tickets ticket) {
 			return this.repo.save(ticket);
 		}
 		

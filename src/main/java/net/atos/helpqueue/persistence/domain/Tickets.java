@@ -2,18 +2,21 @@ package net.atos.helpqueue.persistence.domain;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
 public class Tickets {
 
 	@Id
-	@GeneratedValue
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	private String question;
 	private String user;
 	private String subject;
 	private String tutor;
+	
+	// localdatetime.now
 	
 	public Tickets() {
 		super();

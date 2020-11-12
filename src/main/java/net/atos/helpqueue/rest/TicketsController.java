@@ -12,13 +12,15 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RestController;
 
 import net.atos.helpqueue.persistence.domain.Tickets;
 import net.atos.helpqueue.service.TicketsService;
 
+@RestController
 public class TicketsController {
 
-private TicketsService service;
+	private TicketsService service;
 	
 	public TicketsController(TicketsService service) {
 		super();
@@ -36,12 +38,12 @@ private TicketsService service;
 	}
 	
 	@GetMapping("/read/{id}")
-	public Pokemon readTicket(@PathVariable Long id) {
+	public Tickets readTicket(@PathVariable Long id) {
 		return this.service.getTicketByID(id);
 	}
 	
 	@PutMapping("/update/{id}")
-	public Pokemon updateTicket(@PathVariable Long id, @RequestBody Tickets newData) {
+	public Tickets updateTicket(@PathVariable Long id, @RequestBody Tickets newData) {
 		return this.service.updateTicket(id, newData);
 	}
 	
