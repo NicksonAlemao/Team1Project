@@ -13,37 +13,38 @@ public class Tickets {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-	private String question;
-	private String user;
-	private String subject;
-	private String tutor;
+	private String problemTitle;
+	private String problemDescription;
+	private String employeeName;
+	private String department;
+	private String supportStaff;
+	private Integer upVotes;
+	private String solution;
 	private LocalDateTime ticketCreationTime = LocalDateTime.now();
 
 	public Tickets() {
 		super();
 	}
 
-	public Tickets(Long id, String question, String user, String subject, String tutor) {
+	public Tickets(Long id, String problemTitle, String problemDescription, String employeeName, String department,
+			String supportStaff, Integer upVotes, LocalDateTime ticketCreationTime, String solution) {
 		super();
 		this.id = id;
-		this.question = question;
-		this.user = user;
-		this.subject = subject;
-		this.tutor = tutor;
+		this.problemTitle = problemTitle;
+		this.problemDescription = problemDescription;
+		this.employeeName = employeeName;
+		this.department = department;
+		this.supportStaff = supportStaff;
+		this.upVotes = upVotes;
+		this.solution = solution;
 	}
 
 	@Override
 	public String toString() {
-		return "Tickets [id=" + id + ", question=" + question + ", user=" + user + ", subject=" + subject + ", tutor="
-				+ tutor + ", ticketCreationTime=" + ticketCreationTime + "]";
-	}
-
-	public LocalDateTime getTicketCreationTime() {
-		return ticketCreationTime;
-	}
-
-	public void setTicketCreationTime(LocalDateTime ticketCreationTime) {
-		this.ticketCreationTime = ticketCreationTime;
+		return "Tickets [id=" + id + ", problemTitle=" + problemTitle + ", problemDescription=" + problemDescription
+				+ ", employeeName=" + employeeName + ", department=" + department + ", supportStaff=" + supportStaff
+				+ ", upVotes=" + upVotes + ", solution=" + solution + ", ticketCreationTime=" + ticketCreationTime
+				+ "]";
 	}
 
 	public Long getId() {
@@ -54,36 +55,68 @@ public class Tickets {
 		this.id = id;
 	}
 
-	public String getQuestion() {
-		return question;
+	public String getProblemTitle() {
+		return problemTitle;
 	}
 
-	public void setQuestion(String question) {
-		this.question = question;
+	public void setProblemTitle(String problemTitle) {
+		this.problemTitle = problemTitle;
 	}
 
-	public String getUser() {
-		return user;
+	public String getProblemDescription() {
+		return problemDescription;
 	}
 
-	public void setUser(String user) {
-		this.user = user;
+	public void setProblemDescription(String problemDescription) {
+		this.problemDescription = problemDescription;
 	}
 
-	public String getSubject() {
-		return subject;
+	public String getEmployeeName() {
+		return employeeName;
 	}
 
-	public void setSubject(String subject) {
-		this.subject = subject;
+	public void setEmployeeName(String employeeName) {
+		this.employeeName = employeeName;
 	}
 
-	public String getTutor() {
-		return tutor;
+	public String getDepartment() {
+		return department;
 	}
 
-	public void setTutor(String tutor) {
-		this.tutor = tutor;
+	public void setDepartment(String department) {
+		this.department = department;
+	}
+
+	public String getSupportStaff() {
+		return supportStaff;
+	}
+
+	public void setSupportStaff(String supportStaff) {
+		this.supportStaff = supportStaff;
+	}
+
+	public Integer getUpVotes() {
+		return upVotes;
+	}
+
+	public void setUpVotes(Integer upVotes) {
+		this.upVotes = upVotes;
+	}
+
+	public LocalDateTime getTicketCreationTime() {
+		return ticketCreationTime;
+	}
+
+	public void setTicketCreationTime(LocalDateTime ticketCreationTime) {
+		this.ticketCreationTime = ticketCreationTime;
+	}
+
+	public String getSolution() {
+		return solution;
+	}
+
+	public void setSolution(String solution) {
+		this.solution = solution;
 	}
 
 }
