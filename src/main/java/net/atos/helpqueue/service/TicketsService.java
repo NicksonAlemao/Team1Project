@@ -30,6 +30,14 @@ public class TicketsService {
 		return this.repo.findAll();
 	}
 
+	public Tickets updateVotes(Long id) {
+		Tickets existing = this.repo.findById(id).get();
+		Integer updatedVote = existing.getUpVotes() + 1;
+		existing.setUpVotes(updatedVote);
+
+		return this.repo.save(existing);
+	}
+
 	public Tickets updateTicket(Long id, Tickets newData) {
 		Tickets existing = this.repo.findById(id).get();
 
