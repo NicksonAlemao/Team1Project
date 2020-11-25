@@ -27,7 +27,7 @@ public class Tickets {
 	}
 
 	public Tickets(Long id, String problemTitle, String problemDescription, String employeeName, String department,
-			String supportStaff, Integer upVotes, LocalDateTime ticketCreationTime, String solution) {
+			String supportStaff, Integer upVotes, String solution) {
 		super();
 		this.id = id;
 		this.problemTitle = problemTitle;

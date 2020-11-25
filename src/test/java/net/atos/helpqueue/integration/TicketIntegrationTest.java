@@ -10,6 +10,7 @@ import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMock
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.context.SpringBootTest.WebEnvironment;
 import org.springframework.http.MediaType;
+import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.MvcResult;
 import org.springframework.test.web.servlet.RequestBuilder;
@@ -21,7 +22,7 @@ import net.atos.helpqueue.persistence.domain.Tickets;
 
 @SpringBootTest(webEnvironment = WebEnvironment.RANDOM_PORT)
 @AutoConfigureMockMvc
-
+@ActiveProfiles("test")
 public class TicketIntegrationTest {
 
 	@Autowired
@@ -33,15 +34,17 @@ public class TicketIntegrationTest {
 	@Test
 	void testTicketCreationWithAssert() throws Exception {
 
-		Tickets newTicket = new Tickets(null, "Question", "User", "Subject", "Tutor");
+		Tickets newTicket = new Tickets(null, "problemTitle", "problemDescription", "employeeName", "department",
+				"supportStaff", 1, "solution");
 		String newTicketAsJson = this.mapper.writeValueAsString(newTicket);
 
 		RequestBuilder request = post("/create").content(newTicketAsJson).contentType(MediaType.APPLICATION_JSON);
 
 		ResultMatcher resultStatus = status().is(201);
 
-		Tickets expectedTicket = new Tickets(1L, newTicket.getQuestion(), newTicket.getUser(), newTicket.getSubject(),
-				newTicket.getTutor());
+		Tickets expectedTicket = new Tickets(1L, newTicket.getProblemTitle(), newTicket.getProblemDescription(),
+				newTicket.getEmployeeName(), newTicket.getDepartment(), newTicket.getSupportStaff(),
+				newTicket.getUpVotes(), newTicket.getSolution());
 
 		// checks the status and then returns the whole result of the request
 		MvcResult result = this.mockMvc.perform(request).andExpect(resultStatus).andReturn();
