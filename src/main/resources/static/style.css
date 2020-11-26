@@ -175,7 +175,8 @@
         .card-grid {
             display: grid;
             grid-template-columns: auto 30% auto 30% auto;
-            grid-template-rows: 20% 78% 2%;
+            grid-template-rows: 5%;
+            overflow-y: scroll;
         }
 
         .grid-title-one {
@@ -195,8 +196,6 @@
         .grid-active {
             grid-column-start: 2;
             grid-column-end: 2;
-            grid-row-start: 2;
-            grid-row-end: 2;
         }
 
         .grid-closed {
