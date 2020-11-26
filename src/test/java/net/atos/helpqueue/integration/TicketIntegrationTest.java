@@ -1,8 +1,13 @@
 package net.atos.helpqueue.integration;
 
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,6 +16,8 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.context.SpringBootTest.WebEnvironment;
 import org.springframework.http.MediaType;
 import org.springframework.test.context.ActiveProfiles;
+import org.springframework.test.context.jdbc.Sql;
+import org.springframework.test.context.jdbc.Sql.ExecutionPhase;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.MvcResult;
 import org.springframework.test.web.servlet.RequestBuilder;
@@ -22,6 +29,9 @@ import net.atos.helpqueue.persistence.domain.Tickets;
 
 @SpringBootTest(webEnvironment = WebEnvironment.RANDOM_PORT)
 @AutoConfigureMockMvc
+
+@Sql(scripts = { "classpath:ticket-schema.sql",
+		"classpath:ticket-data.sql" }, executionPhase = ExecutionPhase.BEFORE_TEST_METHOD)
 @ActiveProfiles("test")
 public class TicketIntegrationTest {
 
@@ -42,7 +52,7 @@ public class TicketIntegrationTest {
 
 		ResultMatcher resultStatus = status().is(201);
 
-		Tickets expectedTicket = new Tickets(1L, newTicket.getProblemTitle(), newTicket.getProblemDescription(),
+		Tickets expectedTicket = new Tickets(2L, newTicket.getProblemTitle(), newTicket.getProblemDescription(),
 				newTicket.getEmployeeName(), newTicket.getDepartment(), newTicket.getSupportStaff(),
 				newTicket.getUpVotes(), newTicket.getSolution());
 
@@ -67,6 +77,29 @@ public class TicketIntegrationTest {
 		// https://joel-costigliola.github.io/assertj/assertj-core-quick-start.html
 		assertThat(actualTicket).isEqualToIgnoringGivenFields(expectedTicket, "ticketCreationTime");
 
+	}
+
+	@Test
+	void testReadAllTickets() throws Exception {
+		Tickets testTicket = new Tickets(1L, "problemTitle", "problemDescription", "employeeName", "department",
+				"supportStaff", 1, "solution");
+		List<Tickets> testTickets = new ArrayList<>();
+		testTickets.add(testTicket);
+
+		String testTicketAsJSON = this.mapper.writeValueAsString(testTickets);
+
+		RequestBuilder request = get("/read");
+
+		ResultMatcher checkStatus = status().is(200);
+
+		ResultMatcher checkBody = content().json(testTicketAsJSON);
+
+		MvcResult result = this.mockMvc.perform(request).andExpect(checkStatus).andReturn();
+
+		List<Tickets> tickets = this.mapper.readerForListOf(Tickets.class)
+				.readValue(result.getResponse().getContentAsString());
+		
+		assertThat(testTicket).isEqualToIgnoringGivenFields(tickets.get(0), "ticketCreationTime");
 	}
 
 }
