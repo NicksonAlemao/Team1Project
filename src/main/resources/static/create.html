@@ -36,6 +36,10 @@
               <input type="email" class="form-control" id="inputEmail4" placeholder="e.g. john.smith@atos.net"
                 name="userEmail" required>
             </div>
+            <div class="form-group col-md-6">
+              <label for="inputDAS">DAS ID*</label>
+              <input type="text" class="form-control" id="inputDAS" placeholder="e.g. A123456" name="dasId" required>
+            </div>
           </div>
           <div class="form-row">
             <div class="form-group col-md-6">
@@ -51,9 +55,10 @@
                 <option id="aaa">Analytics, AI and Automation</option>
               </select>
             </div>
-            <!-- <div class="form-group col-md-6">
+            <div class="form-group col-md-6">
               <label for="inputTopic">Topic*</label>
-              <select id="inputTopic" class="form-control" name="dept" required>
+              <select id="inputTopic" class="form-control" name="topic" required>
+                <option disabled selected value>Choose one</option>
                 <option id="it">IT Support</option>
                 <option id="equip">Equipment</option>
                 <option id="onboard">Employee Onboarding</option>
@@ -61,7 +66,7 @@
                 <option id="print">Printing</option>
                 <option id="pass">Password</option>
               </select>
-            </div> -->
+            </div>
           </div>
           <div class="form-group">
             <label for="inputTitle">Issue Title*</label>
@@ -70,7 +75,8 @@
           </div>
           <div class="form-group">
             <label for="inputDesc">Issue Description*</label>
-            <textarea class="form-control" id="inputDesc" rows="3" name="description" required></textarea>
+            <textarea class="form-control" id="inputDesc" rows="3" name="description" maxlength="250"
+              required></textarea>
           </div>
           <button type="submit" class="btn btn-primary">Raise a Ticket</button>
         </fieldset>

@@ -57,7 +57,9 @@ form.addEventListener("submit", function (event) {
     event.preventDefault();
 
     const data = {
-        employeeName: form.userEmail.value,
+        email: form.userEmail.value,
+        topic: form.topic.value,
+        dasId: form.dasId.value,
         department: form.dept.value,
         problemTitle: form.title.value,
         problemDescription: form.description.value
