@@ -30,14 +30,9 @@ public class TicketsService {
 		return this.repo.findAll();
 	}
 
-	public Tickets complete(Long id) {
+	public Tickets complete(Long id, boolean complete) {
 		Tickets existing = this.repo.findById(id).get();
-		boolean check = existing.isComplete();
-
-		if (!check) {
-			existing.setComplete(true);
-		}
-
+		existing.setComplete(complete);
 		return this.repo.save(existing);
 	}
 
