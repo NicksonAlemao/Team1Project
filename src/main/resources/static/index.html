@@ -5,15 +5,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home Page</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
-
     <script type="text/javascript">
 
     </script>
 </head>
 
 <body>
-
     <div class="container">
         <header id="header">
             <img src="images/Logo2.png" class="bordered image" alt="Logo" id="logo" width="10%" />
@@ -32,59 +32,34 @@
                         out</a></button>
             </section>
         </header>
-        <section id="main">
-            <form class="simpleform">
-
-                <h3>Please fill out the form below: </h3>
-
-                <div>
-
-                    <label for="Email"> Email Address</label>
-                    <input name="Email" required type="email" placeholder="example@atos.net">
-                    </input> <br><br>
-
-                    <label for="Department">Department</label>
-                    <select name="Department" required>
-                        <option>Choose option</option>
-                        <option>HR</option>
-                        <option>Sales</option>
-                        <option>Digital Consulting</option>
-                        <option>Digital Workplace</option>
-                        <option>Cybersecurity</option>
-                        <option>Cloud Solutions</option>
-                        <option>Analytics, AI and Automation</option>
-
-                    </select> <br><br>
-
-                    <label for="Topic">Topic</label>
-                    <select name="Topic" required><br>
-                        <option>Choose option</option>
-                        <option>IT Support</option>
-                        <option>Equipment</option>
-                        <option>Employee Onboarding</option>
-                        <option>Security</option>
-                        <option>Printing</option>
-                        <option>Password</option>
+        <main role="main" id="main">
+            <div class="jumbotron home-back">
+                <h3 class="display-3">Welcome to Atos IT Support</h3>
+                <p style="text-align: center;">What can we help you with today?</p>
+                <div class="home-grid">
+                    <div class="home-grid-one">
+                        <p style="padding-left: 6%">Create a Ticket</p>
+                        <a href="create.html"><img src="images/Create.svg" alt="Create Ticket" /></a>
+                    </div>
+                    <div class="home-grid-two">
+                        <p style="padding-left: 3%">View All Tickets</p>
+                        <a href="myquestions.html"><img src="images/View-Details.svg" class="bordered image"
+                                alt="View Tickets" /></a>
+                    </div>
+                    <div class="home-grid-three">
+                        <p style="padding-left: 17%">Help</p>
+                        <a href="help.html"><img src="images/Helping-Hand.svg" class="bordered image" alt="Help" /></a>
+                    </div>
                 </div>
-                </select>
-                <br><br>
+            </div>
 
-                <div>
-
-                    <button type="submit" class="gobutton">GO</button>
-                    <!-- <button type="submit" class="gobutton" onclick="document.location='queue.html'">GO</button> -->
-
-                </div>
-
-            </form>
-            <br><br>
-        </section>
-
-        <footer>
-            <span class="text-muted">
-                &copy; Atos IT Support 2020, all rights reserved.
-            </span>
-        </footer>
+    </div>
+    </main>
+    <footer>
+        <span class="text-muted">
+            &copy; Atos IT Support 2020, all rights reserved.
+        </span>
+    </footer>
 
 
     </div>
