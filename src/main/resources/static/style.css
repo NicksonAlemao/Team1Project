@@ -14,8 +14,7 @@
     border-radius: 5px;
     color:#202020;
     margin: 5px 0px;
-    padding: 5px;
-    background-image: url(./images/atos-logo-blue.jpg) bottom center no-repeat;
+    padding-bottom: 0px;
 }
         div img {
 
@@ -247,4 +246,41 @@
 
         h1 {
             text-align: center;
+        }
+
+        .home-centre {
+            margin: auto;
+            width: 80%;
+        }
+
+        .home-back {
+            background-color: white;
+        }
+
+        .footer {
+            position: relative;
+            top: 450px;
+            right: 1140px;
+        }
+
+        .home-grid {
+            padding-left: 15%;
+            margin-top: 4%;
+            display: grid;
+            grid-template-columns: auto 33% 33% 33% auto;   
+        }
+
+        .home-grid-one {
+            grid-column-start: 2;
+            grid-column-end: 2;
+        }
+
+        .home-grid-two {
+            grid-column-start: 3;
+            grid-column-end: 3;
+        }
+
+        .home-grid-three {
+            grid-column-start: 4;
+            grid-column-end: 4;
         }
