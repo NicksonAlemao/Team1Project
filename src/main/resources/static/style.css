@@ -109,7 +109,7 @@
 
 
         .active, .navbutton:hover {
-            background-color: rgb(31, 185, 39);
+            background-color: rgb(21, 40, 126);
             color: blue;
         }
 
@@ -175,7 +175,7 @@
         .card-grid {
             display: grid;
             grid-template-columns: auto 30% auto 30% auto;
-            grid-template-rows: 2%;
+            grid-template-rows: 5%;
         }
 
         .grid-title-one {
@@ -183,6 +183,7 @@
             grid-column-end: 2;
             grid-row-start: 1;
             grid-row-end: 1;
+            /* margin-bottom: 100px; */
         }
 
         .grid-title-two {
@@ -190,18 +191,21 @@
             grid-column-end: 4;
             grid-row-start: 1;
             grid-row-end: 1;
+            /* margin-bottom: 100px; */
         }
 
         .grid-active {
             grid-column-start: 2;
             grid-column-end: 2;
+            /* grid-row-start: 2;
+            grid-row-end: 100; */
         }
 
         .grid-closed {
             grid-column-start: 4;
             grid-column-end: 4;
-            grid-row-start: 2;
-            grid-row-end: 2;
+            /* /* grid-row-start: 2; */
+
         }
 
         .ScrollStyle{
