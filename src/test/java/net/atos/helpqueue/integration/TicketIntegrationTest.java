@@ -44,8 +44,9 @@ public class TicketIntegrationTest {
 	@Test
 	void testTicketCreationWithAssert() throws Exception {
 
-		Tickets newTicket = new Tickets(null, "problemTitle", "problemDescription", "employeeName", "department",
-				"supportStaff", 1, "solution");
+		Tickets newTicket = new Tickets(null, "problemTitle", "problemDescription", "email", "topic", "dasId",
+				"department", "supportStaff", 1, "solution", false);
+
 		String newTicketAsJson = this.mapper.writeValueAsString(newTicket);
 
 		RequestBuilder request = post("/create").content(newTicketAsJson).contentType(MediaType.APPLICATION_JSON);
@@ -53,8 +54,8 @@ public class TicketIntegrationTest {
 		ResultMatcher resultStatus = status().is(201);
 
 		Tickets expectedTicket = new Tickets(2L, newTicket.getProblemTitle(), newTicket.getProblemDescription(),
-				newTicket.getEmployeeName(), newTicket.getDepartment(), newTicket.getSupportStaff(),
-				newTicket.getUpVotes(), newTicket.getSolution());
+				newTicket.getEmail(), newTicket.getTopic(), newTicket.getDasId(), newTicket.getDepartment(),
+				newTicket.getSupportStaff(), newTicket.getUpVotes(), newTicket.getSolution(), newTicket.isComplete());
 
 		// checks the status and then returns the whole result of the request
 		MvcResult result = this.mockMvc.perform(request).andExpect(resultStatus).andReturn();
@@ -81,8 +82,8 @@ public class TicketIntegrationTest {
 
 	@Test
 	void testReadAllTickets() throws Exception {
-		Tickets testTicket = new Tickets(1L, "problemTitle", "problemDescription", "employeeName", "department",
-				"supportStaff", 1, "solution");
+		Tickets testTicket = new Tickets(1L, "problemTitle", "problemDescription", "email", "topic", "a123456",
+				"department", "supportStaff", 1, "solution", false);
 		List<Tickets> testTickets = new ArrayList<>();
 		testTickets.add(testTicket);
 
@@ -98,7 +99,7 @@ public class TicketIntegrationTest {
 
 		List<Tickets> tickets = this.mapper.readerForListOf(Tickets.class)
 				.readValue(result.getResponse().getContentAsString());
-		
+
 		assertThat(testTicket).isEqualToIgnoringGivenFields(tickets.get(0), "ticketCreationTime");
 	}
 

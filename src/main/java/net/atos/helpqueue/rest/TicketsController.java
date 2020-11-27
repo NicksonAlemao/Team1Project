@@ -41,6 +41,11 @@ public class TicketsController {
 		return this.service.getTicketByID(id);
 	}
 
+	@PatchMapping("/complete/{id}")
+	public Tickets checkComplete(@PathVariable Long id) {
+		return this.service.complete(id);
+	}
+
 	@PatchMapping("/upVote/{id}")
 	public Tickets updateVotes(@PathVariable Long id) {
 		return this.service.updateVotes(id);
