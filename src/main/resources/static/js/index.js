@@ -51,13 +51,16 @@ fetch("/read")
     });
 
 
-document.getElementById("createTicket").addEventListener("submit", function (event) {
+const form = document.getElementById("createTicket")
+
+form.addEventListener("submit", function (event) {
     event.preventDefault();
 
     const data = {
-        problemTitle: this.title.value,
-        problemDescription: this.description.value,
-        department: this.dept.value
+        employeeName: form.userEmail.value,
+        department: form.dept.value,
+        problemTitle: form.title.value,
+        problemDescription: form.description.value
     }
 
     fetch("/create", {
@@ -72,6 +75,7 @@ document.getElementById("createTicket").addEventListener("submit", function (eve
         })
         .then(function (ticket) {
             console.log("ticket: ", ticket);
+            form.reset();
         })
         .catch(function (error) {
             console.error(error);
