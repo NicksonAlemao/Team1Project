@@ -15,36 +15,34 @@ public class Tickets {
 	private Long id;
 	private String problemTitle;
 	private String problemDescription;
-	private String employeeName;
+	private String email;
+	private String topic;
+	private String dasId;
 	private String department;
 	private String supportStaff;
-	private Integer upVotes;
+	private Integer upVotes = 1;
 	private String solution;
+	private boolean complete;
 	private LocalDateTime ticketCreationTime = LocalDateTime.now();
 
 	public Tickets() {
 		super();
 	}
 
-	public Tickets(Long id, String problemTitle, String problemDescription, String employeeName, String department,
-			String supportStaff, Integer upVotes, String solution) {
+	public Tickets(Long id, String problemTitle, String problemDescription, String email, String topic, String dasId,
+			String department, String supportStaff, Integer upVotes, String solution, boolean complete) {
 		super();
 		this.id = id;
 		this.problemTitle = problemTitle;
 		this.problemDescription = problemDescription;
-		this.employeeName = employeeName;
+		this.email = email;
+		this.topic = topic;
+		this.dasId = dasId;
 		this.department = department;
 		this.supportStaff = supportStaff;
 		this.upVotes = upVotes;
 		this.solution = solution;
-	}
-
-	@Override
-	public String toString() {
-		return "Tickets [id=" + id + ", problemTitle=" + problemTitle + ", problemDescription=" + problemDescription
-				+ ", employeeName=" + employeeName + ", department=" + department + ", supportStaff=" + supportStaff
-				+ ", upVotes=" + upVotes + ", solution=" + solution + ", ticketCreationTime=" + ticketCreationTime
-				+ "]";
+		this.complete = complete;
 	}
 
 	public Long getId() {
@@ -71,12 +69,28 @@ public class Tickets {
 		this.problemDescription = problemDescription;
 	}
 
-	public String getEmployeeName() {
-		return employeeName;
+	public String getEmail() {
+		return email;
 	}
 
-	public void setEmployeeName(String employeeName) {
-		this.employeeName = employeeName;
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	public String getTopic() {
+		return topic;
+	}
+
+	public void setTopic(String topic) {
+		this.topic = topic;
+	}
+
+	public String getDasId() {
+		return dasId;
+	}
+
+	public void setDasId(String dasId) {
+		this.dasId = dasId;
 	}
 
 	public String getDepartment() {
@@ -103,20 +117,28 @@ public class Tickets {
 		this.upVotes = upVotes;
 	}
 
-	public LocalDateTime getTicketCreationTime() {
-		return ticketCreationTime;
-	}
-
-	public void setTicketCreationTime(LocalDateTime ticketCreationTime) {
-		this.ticketCreationTime = ticketCreationTime;
-	}
-
 	public String getSolution() {
 		return solution;
 	}
 
 	public void setSolution(String solution) {
 		this.solution = solution;
+	}
+
+	public boolean isComplete() {
+		return complete;
+	}
+
+	public void setComplete(boolean complete) {
+		this.complete = complete;
+	}
+
+	public LocalDateTime getTicketCreationTime() {
+		return ticketCreationTime;
+	}
+
+	public void setTicketCreationTime(LocalDateTime ticketCreationTime) {
+		this.ticketCreationTime = ticketCreationTime;
 	}
 
 }

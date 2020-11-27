@@ -30,6 +30,17 @@ public class TicketsService {
 		return this.repo.findAll();
 	}
 
+	public Tickets complete(Long id) {
+		Tickets existing = this.repo.findById(id).get();
+		boolean check = existing.isComplete();
+
+		if (!check) {
+			existing.setComplete(true);
+		}
+
+		return this.repo.save(existing);
+	}
+
 	public Tickets updateVotes(Long id) {
 		Tickets existing = this.repo.findById(id).get();
 		Integer updatedVote = existing.getUpVotes() + 1;
@@ -43,6 +54,9 @@ public class TicketsService {
 
 		existing.setProblemTitle(newData.getProblemTitle());
 		existing.setProblemDescription(newData.getProblemDescription());
+		existing.setEmail(newData.getEmail());
+		existing.setTopic(newData.getTopic());
+		existing.setDasId(newData.getDasId());
 		existing.setSupportStaff(newData.getSupportStaff());
 		existing.setUpVotes(newData.getUpVotes());
 		existing.setDepartment(newData.getDepartment());
