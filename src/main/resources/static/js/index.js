@@ -8,6 +8,15 @@ function renderTickets() {
         }).then(function (tickets) {
             output.innerHTML = "";
             for (let ticket of tickets) {
+                // recreate headers
+                const active = document.createElement("h4");
+                active.className = "grid-title-one";
+                active.innerText = "Active Tickets";
+                output.appendChild(active);
+                const closed = document.createElement("h4");
+                closed.className = "grid-title-two";
+                closed.innerText = "Closed Tickets";
+                output.appendChild(closed);
                 // create card
                 const newTicket = document.createElement("div");
                 newTicket.className = "card grid-active";
