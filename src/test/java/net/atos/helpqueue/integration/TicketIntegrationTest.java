@@ -65,7 +65,6 @@ public class TicketIntegrationTest {
 
 		// Uses the ObjectMapper to convert the JSON String back to a Ticket
 		Tickets actualTicket = this.mapper.readValue(responseBody, Tickets.class);
-
 		// Using the AssertJ library to compare the two Dog objects - test will fail if
 		// objects don't match
 		// Note:
@@ -77,9 +76,7 @@ public class TicketIntegrationTest {
 		// More info on AssertJ available @
 		// https://joel-costigliola.github.io/assertj/assertj-core-quick-start.html
 		assertThat(actualTicket).isEqualToIgnoringGivenFields(expectedTicket, "ticketCreationTime");
-
 	}
-
 	@Test
 	void testReadAllTickets() throws Exception {
 		Tickets testTicket = new Tickets(1L, "problemTitle", "problemDescription", "email", "topic", "a123456",
@@ -102,5 +99,4 @@ public class TicketIntegrationTest {
 
 		assertThat(testTicket).isEqualToIgnoringGivenFields(tickets.get(0), "ticketCreationTime");
 	}
-
 }
