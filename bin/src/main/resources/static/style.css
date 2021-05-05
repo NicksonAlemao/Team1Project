@@ -1,0 +1,250 @@
+.container {
+    max-width: 90%;
+    margin: auto;
+    
+}
+
+
+#main{
+    margin: 5px;
+    padding: 5px;
+    border: 5px;
+    font-family: "Raleway", sans-serif;
+    border: solid 1px #a59f9f;
+    border-radius: 5px;
+    color:#202020;
+    margin: 5px 0px;
+    padding: 5px;
+    background-image: url(./images/atos-logo-blue.jpg) bottom center no-repeat;
+}
+        div img {
+
+            border-radius: 4px;
+            padding: 5px;
+            width: 150px;
+            height: 140px;
+        }
+
+        .logo {
+            float: left;
+            color: black;
+            text-align: center;
+            padding: 12px;
+            text-decoration: none;
+            border-radius: 4px;
+        }
+
+        #header {
+            background-color: #cccccc;
+            padding: 10px 10px;
+            border: 1px solid rgb(176, 175, 184);
+            border-radius: 10px;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            background-image: url(./images/Edge-Computing.jpg);
+        }
+
+        .header-right {
+            padding-left: 3%;
+            padding-top: 3%;
+            vertical-align: middle;
+        }
+
+
+
+        label {
+            font-weight: bold;
+            text-align: left;
+            width: 150px;
+            display: inline-block;
+
+        }
+
+
+        #main select {
+            max-width: 40%;
+            
+        }
+
+        #main input {
+            max-width: 40%;
+        }
+
+        .responsive {
+            width: 100%;
+            height: auto;
+        }
+
+        .navbutton {
+            width: 120px;
+            border: 1px solid #ddd;
+            background-color: rgb(98, 145, 214);
+            padding: 12px;
+            border-radius: 10px;
+            font-size: 15px;
+            font-weight: normal;
+            transition-duration: 0.4s;
+            color: #f3ebeb;
+            align-items: center;
+            content: "";
+            display: inline-block;
+            height: 30%;
+            vertical-align: middle
+
+
+        }
+
+        .gobutton {
+            width: 110px;
+            border: 2px solid #ddd;
+            background-color: rgb(31, 185, 39);
+            padding: 12px;
+            border-radius: 20px;
+            font-size: 15px;
+            font-weight: lighter;
+            transition-duration: 0.4s;
+            color: #ffffff;
+        }
+
+
+        .active, .navbutton:hover {
+            background-color: rgb(31, 185, 39);
+            color: blue;
+        }
+
+        select, input {
+            width: 40%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid rgb(98, 145, 214);
+            box-sizing: border-box;
+            border-radius: 4px;
+            vertical-align: middle;
+
+
+        }
+
+
+        option {
+
+            font-family:Arial, Helvetica, sans-serif;
+            font-size: medium;
+        }
+
+        body {
+
+            font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+
+        }
+
+        .simpleform {
+            text-align: center;
+        }
+
+        h3 {
+
+            text-align: center;
+        }
+
+        #myQs {
+            max-width: 50%;
+            margin: auto;
+        }
+        .create {
+            border-radius: 5px;
+            background-color: #f2f2f2;
+            padding: 20px;
+        }
+
+        .standard-padding {
+            padding: 20px 50px 20px 50px;
+        }
+
+        .button-outline {
+            border:1px solid rgb(32, 17, 116);
+        }
+
+        .card-padding {
+            padding-left: 30px;
+            padding-right: 30px;
+            padding-bottom: 30px;
+        }
+
+        .card-grid {
+            display: grid;
+            grid-template-columns: auto 30% auto 30% auto;
+            grid-template-rows: 2%;
+        }
+
+        .grid-title-one {
+            grid-column-start: 2;
+            grid-column-end: 2;
+            grid-row-start: 1;
+            grid-row-end: 1;
+        }
+
+        .grid-title-two {
+            grid-column-start: 4;
+            grid-column-end: 4;
+            grid-row-start: 1;
+            grid-row-end: 1;
+        }
+
+        .grid-active {
+            grid-column-start: 2;
+            grid-column-end: 2;
+        }
+
+        .grid-closed {
+            grid-column-start: 4;
+            grid-column-end: 4;
+            grid-row-start: 2;
+            grid-row-end: 2;
+        }
+
+        .ScrollStyle{
+            
+            max-height: 390px;
+            overflow-y: scroll;
+        }
+
+        td div{
+            border: 2px solid rgb(204, 202, 219);
+            width: 90%;
+            padding: 20px;
+            margin: 10px;
+
+        }
+      
+        .bordered-image {
+            border: solid
+        }
+
+        footer {
+
+            text-align: end;
+            color: #6c757d;
+            position: fixed;
+
+        }
+
+        .full-tickets {
+            height: 60%;
+            width: 88%;
+            position: fixed;
+            overflow-y: scroll;
+        }
+
+        .label-pad {
+            text-align: center;
+        }
+
+        .pad-top {
+            margin-top: 1%;
+        }
+
+        h1 {
+            text-align: center;
+        }

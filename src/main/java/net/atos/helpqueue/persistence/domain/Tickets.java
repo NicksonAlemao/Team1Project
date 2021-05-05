@@ -13,37 +13,36 @@ public class Tickets {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-	private String question;
-	private String user;
-	private String subject;
-	private String tutor;
+	private String problemTitle;
+	private String problemDescription;
+	private String email;
+	private String topic;
+	private String dasId;
+	private String department;
+	private String supportStaff;
+	private Integer upVotes = 1;
+	private String solution;
+	private boolean complete;
 	private LocalDateTime ticketCreationTime = LocalDateTime.now();
 
 	public Tickets() {
 		super();
 	}
 
-	public Tickets(Long id, String question, String user, String subject, String tutor) {
+	public Tickets(Long id, String problemTitle, String problemDescription, String email, String topic, String dasId,
+			String department, String supportStaff, Integer upVotes, String solution, boolean complete) {
 		super();
 		this.id = id;
-		this.question = question;
-		this.user = user;
-		this.subject = subject;
-		this.tutor = tutor;
-	}
-
-	@Override
-	public String toString() {
-		return "Tickets [id=" + id + ", question=" + question + ", user=" + user + ", subject=" + subject + ", tutor="
-				+ tutor + ", ticketCreationTime=" + ticketCreationTime + "]";
-	}
-
-	public LocalDateTime getTicketCreationTime() {
-		return ticketCreationTime;
-	}
-
-	public void setTicketCreationTime(LocalDateTime ticketCreationTime) {
-		this.ticketCreationTime = ticketCreationTime;
+		this.problemTitle = problemTitle;
+		this.problemDescription = problemDescription;
+		this.email = email;
+		this.topic = topic;
+		this.dasId = dasId;
+		this.department = department;
+		this.supportStaff = supportStaff;
+		this.upVotes = upVotes;
+		this.solution = solution;
+		this.complete = complete;
 	}
 
 	public Long getId() {
@@ -54,36 +53,92 @@ public class Tickets {
 		this.id = id;
 	}
 
-	public String getQuestion() {
-		return question;
+	public String getProblemTitle() {
+		return problemTitle;
 	}
 
-	public void setQuestion(String question) {
-		this.question = question;
+	public void setProblemTitle(String problemTitle) {
+		this.problemTitle = problemTitle;
 	}
 
-	public String getUser() {
-		return user;
+	public String getProblemDescription() {
+		return problemDescription;
 	}
 
-	public void setUser(String user) {
-		this.user = user;
+	public void setProblemDescription(String problemDescription) {
+		this.problemDescription = problemDescription;
 	}
 
-	public String getSubject() {
-		return subject;
+	public String getEmail() {
+		return email;
 	}
 
-	public void setSubject(String subject) {
-		this.subject = subject;
+	public void setEmail(String email) {
+		this.email = email;
 	}
 
-	public String getTutor() {
-		return tutor;
+	public String getTopic() {
+		return topic;
 	}
 
-	public void setTutor(String tutor) {
-		this.tutor = tutor;
+	public void setTopic(String topic) {
+		this.topic = topic;
+	}
+
+	public String getDasId() {
+		return dasId;
+	}
+
+	public void setDasId(String dasId) {
+		this.dasId = dasId;
+	}
+
+	public String getDepartment() {
+		return department;
+	}
+
+	public void setDepartment(String department) {
+		this.department = department;
+	}
+
+	public String getSupportStaff() {
+		return supportStaff;
+	}
+
+	public void setSupportStaff(String supportStaff) {
+		this.supportStaff = supportStaff;
+	}
+
+	public Integer getUpVotes() {
+		return upVotes;
+	}
+
+	public void setUpVotes(Integer upVotes) {
+		this.upVotes = upVotes;
+	}
+
+	public String getSolution() {
+		return solution;
+	}
+
+	public void setSolution(String solution) {
+		this.solution = solution;
+	}
+
+	public boolean isComplete() {
+		return complete;
+	}
+
+	public void setComplete(boolean complete) {
+		this.complete = complete;
+	}
+
+	public LocalDateTime getTicketCreationTime() {
+		return ticketCreationTime;
+	}
+
+	public void setTicketCreationTime(LocalDateTime ticketCreationTime) {
+		this.ticketCreationTime = ticketCreationTime;
 	}
 
 }

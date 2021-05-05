@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Tickets</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <header id="header">
+            <img src="images/Logo2.png" class="bordered image" alt="Logo" id="logo" width="10%" />
+            <section id="header-right">
+                <button class="navbutton"> <a href="index.html" style="text-decoration: none; color:white;"> Home </a>
+                </button>
+                <button class="navbutton"> <a href="create.html" style="text-decoration: none; color:white;"> Create
+                        Ticket </a>
+                </button>
+                <button class="navbutton active"> <a href="myquestions.html" style="text-decoration: none; color:white">
+                        My
+                        Tickets</a></button>
+                <button class="navbutton"> <a href="help.html" style="text-decoration: none; color:white"> Help </a>
+                </button>
+                <button class="navbutton"> <a href="index.html" style="text-decoration: none; color:white">Log
+                        out</a></button>
+
+            </section>
+        </header>
+        <section id="main" class="full-tickets">
+            <h3 class="standard-padding">My Tickets</h3>
+            <section>
+                <div class="card-grid" id="activeTickets">
+                    <h4 class="grid-title-one">Active Tickets</h4>
+                    <h4 class="grid-title-two">Closed Tickets</h4>
+                </div>
+            </section>
+        </section>
+        <footer class="footer-fix">
+            <span class="text-muted">
+                &copy; Atos IT Support 2020, all rights reserved.
+            </span>
+        </footer>
+    </div>
+    <script src="js/index.js"></script>
+</body>
+
+</html>

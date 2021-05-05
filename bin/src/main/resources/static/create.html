@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Create a Ticket</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div class="container">
+
+    <header id="header">
+      <img src="images/Logo2.png" class="bordered image" alt="Logo" id="logo" width="10%" />
+      <section id="header-right">
+        <button class="navbutton"> <a href="index.html" style="text-decoration: none; color:white;"> Home </a> </button>
+        <button class="navbutton"> <a href="create.html" style="text-decoration: none; color:white;"> Create Ticket </a>
+        </button>
+        <button class="navbutton"> <a href="myquestions.html" style="text-decoration: none; color:white"> My
+            Questions</a></button>
+        <button class="navbutton"> <a href="help.html" style="text-decoration: none; color:white"> Help </a> </button>
+        <button class="navbutton"> <a href="index.html" style="text-decoration: none; color:white">Log out</a></button>
+      </section>
+    </header>
+    <br></br>
+    <section id="main">
+      <form class="standard-padding" id="createTicket">
+        <fieldset class="form-group">
+          <legend>Having an issue? Let us know...</legend>
+          <div class="row">
+            <div class="col">
+              <label for="inputEmail4">Email Address*</label>
+              <input type="email" class="form-control" id="inputEmail4" placeholder="e.g. john.smith@atos.net"
+                name="userEmail" required>
+            </div>
+            <div class="col">
+              <label for="inputDAS">DAS ID*</label>
+              <input type="text" class="form-control" id="inputDAS" placeholder="e.g. A123456" name="dasId" required>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <label for="inputDept">Department*</label>
+              <select id="inputDept" class="form-control" name="dept" required>
+                <option disabled selected value>Choose one</option>
+                <option id="hr">HR</option>
+                <option id="sales">Sales</option>
+                <option id="dc">Digital Consulting</option>
+                <option id="dw">Digital Workplace</option>
+                <option id="cyber">Cybersecurity</option>
+                <option id="cs">Cloud Solutions</option>
+                <option id="aaa">Analytics, AI and Automation</option>
+              </select>
+            </div>
+            <div class="col">
+              <label for="inputTopic">Topic*</label>
+              <select id="inputTopic" class="form-control" name="topic" required>
+                <option disabled selected value>Choose one</option>
+                <option id="it">IT Support</option>
+                <option id="equip">Equipment</option>
+                <option id="onboard">Employee Onboarding</option>
+                <option id="sec">Security</option>
+                <option id="print">Printing</option>
+                <option id="pass">Password</option>
+              </select>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <label for="inputTitle">Issue Title*</label>
+              <input type="text" class="form-control" id="inputTitle" placeholder="e.g. I need to reset my password"
+                name="title" required>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <label for="inputDesc">Issue Description*</label>
+              <textarea class="form-control" id="inputDesc" rows="3" name="description" maxlength="250"
+                required></textarea>
+            </div>
+          </div>
+          <button type="submit" class="btn btn-primary">Raise a Ticket</button>
+        </fieldset>
+      </form>
+    </section>
+  </div>
+  <script src="js/index.js"></script>
+</body>
+
+</html>
